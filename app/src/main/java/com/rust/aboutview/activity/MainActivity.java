@@ -16,7 +16,6 @@ import com.rust.aboutview.AboutViewConfig;
 import com.rust.aboutview.R;
 import com.rust.aboutview.contactview.PeopleMainActivity;
 import com.rust.aboutview.service.FloatingBarService;
-import com.rust.aboutview.widget.PageItemDecoration;
 import com.rust.aboutview.widget.PageListAdapter;
 
 import java.util.ArrayList;
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        mToolbar.setNavigationIcon(R.drawable.ic_back_white);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
-        mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.BLACK);
+        mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.parseColor("#F5F5F5"));
         initPageList();
     }
 
@@ -213,7 +212,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        mPagesReView.addItemDecoration(new PageItemDecoration(getApplicationContext()));
         mPagesReView.setAdapter(pageListAdapter);
     }
 
