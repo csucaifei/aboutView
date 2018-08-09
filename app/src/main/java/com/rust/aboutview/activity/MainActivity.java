@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.rust.aboutview.AboutViewConfig;
 import com.rust.aboutview.R;
+import com.rust.aboutview.algochart.AlgoChartActivity;
 import com.rust.aboutview.contactview.PeopleMainActivity;
 import com.rust.aboutview.service.FloatingBarService;
 import com.rust.aboutview.widget.PageListAdapter;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String ACT_SELECT_RECT = "act_select_rect";
     private static final String ACT_FRAME_CONTAINER = "act_frame_container";
     private static final String DIALOG_DEMO_ACT = "act_dialog_activity";
+    private static final String K_ALGO_CHART_ACT = "key_algo_chart_activity";
     private static final String SHOW_SHADOW_LINE_CHART_DEMO = "show_SHADOW_LINE_CHART_DEMO";
 
     @BindView(R.id.toolbar)
@@ -109,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         pageItemViewEntities.add(new PageListAdapter.DeviceItemViewEntity(ACT_FRAME_CONTAINER, "示例视图", PageListAdapter.ItemType.FUNCTION));
         pageItemViewEntities.add(new PageListAdapter.DeviceItemViewEntity(SHOW_SHADOW_LINE_CHART_DEMO, "带阴影的折线图", PageListAdapter.ItemType.WIDGET));
         pageItemViewEntities.add(new PageListAdapter.DeviceItemViewEntity(DIALOG_DEMO_ACT, "Dialog demos", PageListAdapter.ItemType.WIDGET));
+        pageItemViewEntities.add(new PageListAdapter.DeviceItemViewEntity(K_ALGO_CHART_ACT, "Algo Chart", PageListAdapter.ItemType.FUNCTION));
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         mPagesReView.setLayoutManager(gridLayoutManager);
@@ -201,6 +204,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case DIALOG_DEMO_ACT:
                         startActivity(new Intent(getApplicationContext(), DialogDemoActivity.class));
+                        break;
+                    case K_ALGO_CHART_ACT:
+                        startActivity(new Intent(getApplicationContext(), AlgoChartActivity.class));
                         break;
                     default:
                         break;
